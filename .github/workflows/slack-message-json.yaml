@@ -9,6 +9,9 @@ on:
       input2:
         description: 'any input2'     
         default: 'hieeeee'
+      id:
+        description: 'any input3'     
+        default: '123456'
 
 jobs:
   new_push_job:
@@ -16,8 +19,6 @@ jobs:
     name: New push to repo
     steps:
     - uses: actions/checkout@v3
-      with:
-        ref: ${{ inputs.branch }}
     # - name: Send GitHub trigger payload to Slack Workflow Builder
     #   id: slack
     #   uses: slackapi/slack-github-action@v1.23.0
@@ -27,5 +28,5 @@ jobs:
     #   env:
     #     SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
     - name: echo inputs
-      run: echo ${{ inputs.branch }} -- ${{ inputs.input2 }}
+      run: echo ${{ inputs.branch }} -- ${{ inputs.input2 }} -- ${{ inputs.id }}
       shell: bash
