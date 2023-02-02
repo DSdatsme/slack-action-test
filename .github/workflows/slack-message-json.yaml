@@ -1,3 +1,4 @@
+name: Test Github Run IDs
 on:
   push:
   workflow_dispatch:
@@ -26,4 +27,5 @@ jobs:
     #   env:
     #     SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
     - name: echo inputs
-      runs: echo ${{ inputs.branch }} -- ${{ inputs.input2 }}
+      run: echo ${{ inputs.branch }} -- ${{ inputs.input2 }}
+      shell: bash
