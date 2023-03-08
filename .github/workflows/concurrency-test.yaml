@@ -19,7 +19,7 @@ on:
 jobs:
   setup-runner:
     name: "First Job"
-
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
         with:
