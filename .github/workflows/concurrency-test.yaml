@@ -9,7 +9,6 @@ on:
   workflow_dispatch:
     inputs:
       appName:
-        type: choice
         description: 'App you want to deploy'
         default: 'busybox'
 jobs:
